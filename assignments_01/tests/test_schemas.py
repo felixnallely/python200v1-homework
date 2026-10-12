@@ -20,7 +20,7 @@ def test_latitude_raises_validation_error():
     bad_data = {
         "latitude": 200.0,
         "longitude": -117.0,
-        "timestamp": "UTC",
+        "timezone": "UTC",
         "elevation": 100.0,
         "hourly": {
             "time": ["2026-04-08T00:00"],

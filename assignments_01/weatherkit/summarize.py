@@ -31,7 +31,7 @@ class DailySummary:
 
 class DailyAggregator: 
     """
-    This aggregates houly readings into summaries of weather daily. 
+    This aggregates hourly readings into summaries of weather daily. 
     """
 
     def __init__(self, min_hours: int = 24) -> None:

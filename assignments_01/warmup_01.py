@@ -281,7 +281,7 @@ from datetime import datetime
 
 try: 
     reading = Reading(
-        station_id_="AB",  #too short 
+        station_id="AB",  #too short 
         temperature_c="not a number",  #non-numeric
         humidity=50
     ) #no timestamp 
@@ -350,7 +350,7 @@ except ValidationError as e:
 # --- Pytest --- Question 1
 import pytest 
 
-def celsius_to_fanhrenheit(celsius:float) -> float:
+def celsius_to_fahrenheit(celsius:float) -> float:
     """
     To convert a temperature in Celsius to Fahrenheit.
     Args: celsius: Temperature in degrees Celsius 
@@ -359,9 +359,9 @@ def celsius_to_fanhrenheit(celsius:float) -> float:
     return (celsius * 9 / 5) + 32 
 
 def test_celsius_to_fahrenheit():
-    assert celsius_to_fanhrenheit(0) == 32
-    assert celsius_to_fanhrenheit(100) == 212 
-    assert celsius_to_fanhrenheit(37) == pytest.approx(98.6)   
+    assert celsius_to_fahrenheit(0) == 32
+    assert celsius_to_fahrenheit(100) == 212 
+    assert celsius_to_fahrenheit(37) == pytest.approx(98.6)   
     #since floats can cause rounding calculations, pytest.approx is used instead of == when it comes 
     #to comparing decimal values.
 
@@ -409,12 +409,12 @@ def test_mean_values(values, expected):
 
 # --- Pytest --- Question 4 
 #Break the function 
-# def celsius_to_fanhrenheit(celsius:float) -> float:
+# def celsius_to_fahrenheit(celsius:float) -> float:
     #return (celsius * 9 / 4) + 32 
 
 # Failure output after breaking function: 
 #  E assert 257.0 == 212
-#  E        +  where 257.0 = celsius_to_fanhrenheit(100)
+#  E        +  where 257.0 = celsius_to_fahrenheit(100)
 #
 # This is more helpful than an "assertion failed" message because it shows what when wrong and by how much it went wrong. 
 # Which makes it easier to debug and fix the problem. 
