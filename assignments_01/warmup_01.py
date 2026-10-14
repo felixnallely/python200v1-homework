@@ -86,6 +86,10 @@ alert2 = TemperatureAlert(30.5)
 print("Alert1 breaches:", alert1.breaches(t))
 print("Alert2 breaches:", alert2.breaches(t))
 
+# The threshold storing TemperatureAlert as an objects makes it esier to reuse it with other thermometers
+# without having to pass it everytime with a new value. This makes the code easier and simple to maintain.
+
+
 # --- Dataclass --- Question 1
 from dataclasses import dataclass, FrozenInstanceError
 
