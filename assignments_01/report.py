@@ -2,37 +2,6 @@ import json
 
 from weatherkit import WeatherResponse, to_readings, DailyAggregator
 
-#Testing --
-with open ("weather_raw.json", "r") as f: 
-    raw_data = json.load(f)
-
-weather = WeatherResponse.model_validate(raw_data)
-
-print("Latitude:", weather.latitude)
-print("Timezone:", weather.timezone)
-print("Hourly observations:", len(weather.hourly.time))
-
-readings = to_readings(weather)
-
-print(len(readings))
-print(readings[0])
-print(readings[-1])
-
-# Testing aggregator
-aggregator = DailyAggregator()
-summaries = aggregator.summarize(readings)
-
-print(len(summaries))
-
-for summary in summaries[:2]:
-    print(
-        summary.date, 
-        summary.temp_max,
-        summary.temp_min,
-        summary.precipitation_sum,
-        summary.hours_observed,
-    )
-
 # -- Task 6: the Script -- report.py -- # 
 def main() -> None: 
     """
@@ -73,7 +42,8 @@ def main() -> None:
             "WARNING: Incomplete days were dropped:", ",".join(dropped_days),
         )
 
-if __name__ == "__main__": main()
+if __name__ == "__main__": 
+    main()
 
 # If the guard was omitted, the report would automatically run printing the report and output. 
 # If this report was being imported from another file. 
