@@ -174,18 +174,18 @@ for name, coef in zip(feature_cols, model.coef_):
 y_pred = model.predict(X_test)
 
 plt.figure(figsize=(8, 6))
-plt.scatter(y_pred, y_test, alpha=0.07)
+plt.scatter(y_pred, y_test, alpha=0.7)
 
 # Diagonal line 
 # Diagonal line 
 min_val = min(y_test.min(), y_pred.min())
-max_val = max(y_test.max(), y_pred.min())
+max_val = max(y_test.max(), y_pred.max())
 
 plt.plot([min_val, max_val], [min_val, max_val], "r--", linewidth=2)
 
 plt.title("Predicted vs Actual (Full Model)")
 plt.xlabel("Predicted Daily High Temperature (°C)")
-plt.xlabel("Actual Daily High Temperature (°C)")
+plt.ylabel("Actual Daily High Temperature (°C)")
 
 plt.savefig("outputs/predicted_vs_actual_high.png")
 plt.close()

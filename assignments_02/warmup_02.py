@@ -129,13 +129,13 @@ plt.scatter(y_pred, y_test)
 
 # Diagonal line 
 min_val = min(y_test.min(), y_pred.min())
-max_val = max(y_test.max(), y_pred.min())
+max_val = max(y_test.max(), y_pred.max())
 
 plt.plot([min_val, max_val], [min_val, max_val], "r--")
 
 plt.title("Predicted vs Actual")
 plt.xlabel("Predicted High Temperature")
-plt.xlabel("Actual high Temperature")
+plt.ylabel("Actual high Temperature")
 
 plt.savefig("outputs/predicted_vs_actual_warmup.png")
 plt.close()
