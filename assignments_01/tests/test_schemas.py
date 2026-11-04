@@ -35,7 +35,7 @@ def test_mismatched_lengths_raise_validation_error():
     bad_data = {
         "latitude": 34.0,
         "longitude": -117.0,
-        "timestamp": "UTC",
+        "timezone": "UTC",
         "elevation": 100.0,
         "hourly": {
             "time": ["a", "b", "c"],
@@ -50,7 +50,7 @@ def test_null_temp_raises_validation_error():
     bad_data = {
         "latitude": 34.0,
         "longitude": -117.0,
-        "timestamp": "UTC",
+        "timezone": "UTC",
         "elevation": 100.0,
         "hourly": {
             "time": ["2026-04-08T00:00"],

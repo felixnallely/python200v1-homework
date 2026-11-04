@@ -64,7 +64,7 @@ def test_lower_min_hours_keeps_day():
             (20.0, 10.0, 10.0),
             (15.5, 5.5, 10.0),
             (8.0, 8.0, 0.0),
-            ([-2, 0, 6], -4.0)
+            (-2.0, -6.0, 4.0)
         ],
     )
 def test_temp_range(temp_max, temp_min, expected):

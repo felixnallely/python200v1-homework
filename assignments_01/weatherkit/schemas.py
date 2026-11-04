@@ -12,7 +12,7 @@ class HourlyBlock(BaseModel):
     precipitation: list[float]
 
     @model_validator(mode="after")
-    def calidate_lengths(self):
+    def validate_lengths(self):
         if not (
             len(self.time) == len(self.temperature_2m) == len(self.precipitation)
         ):

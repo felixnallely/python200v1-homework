@@ -86,6 +86,10 @@ alert2 = TemperatureAlert(30.5)
 print("Alert1 breaches:", alert1.breaches(t))
 print("Alert2 breaches:", alert2.breaches(t))
 
+# The threshold storing TemperatureAlert as an objects makes it esier to reuse it with other thermometers
+# without having to pass it everytime with a new value. This makes the code easier and simple to maintain.
+
+
 # --- Dataclass --- Question 1
 from dataclasses import dataclass, FrozenInstanceError
 
@@ -396,7 +400,7 @@ def mean(values: list[float]) -> float:
     
     return sum(values) / len(values)
 @pytest.mark.parametrize("values, expected", [([1, 2, 3], 2.0), ([5], 5.0), #single element list 
-        ([10, 20, 30, 40], 25.0),]
+        ([10, 20, 30, 40], 25.0), ([-10, -20], -15.0),]
     )
 
 def test_mean_values(values, expected):
@@ -405,6 +409,14 @@ def test_mean_values(values, expected):
 # One parametrized test with four cases are better than four nearly identical test functions because it reduces 
 # duplicated code and helps keep any cases that are related to the test together. It also allows for adding more 
 # entries onto the list of parameters. It also makes it easy to identify any failures. 
+#
+# pytest -v output: 
+# warmup_01.py::test_celsius_to_fahrenheit PASSED                            [ 16%]
+# warmup_01.py::test_mean_of_empty_raises PASSED                             [ 33%]
+# warmup_01.py::test_mean_values[values0-2.0] PASSED                         [ 50%]
+# warmup_01.py::test_mean_values[values1-5.0] PASSED                         [ 66%]
+# warmup_01.py::test_mean_values[values2-25.0] PASSED                        [ 83%]
+# warmup_01.py::test_mean_values[values3--15.0] PASSED                       [100%]
 
 
 # --- Pytest --- Question 4 
