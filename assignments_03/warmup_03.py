@@ -192,7 +192,7 @@ log_pipeline.fit(X_train, y_train)
 y_pred = log_pipeline.predict(X_test)
 
 #Evaluation metrics
-accuracy = accuracy_score(y_test, y_pred_scaled)
+accuracy = accuracy_score(y_test, y_pred)
 precision = precision_score(y_test, y_pred)
 recall = recall_score(y_test, y_pred)
 f1 = f1_score(y_test, y_pred)
