@@ -1,0 +1,14 @@
+{
+    "python_version": "3.14.3",
+    "scikit_learn_version": "1.9.1",
+    "city": "San Bernardino",
+    "feature_names": [
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "precipitation_sum",
+        "wind_speed_10m_max"
+    ],
+    "label_rule": "good_for_running = 1 when temperature_2m_max is between 7 and 26 degrees C, temperature_2m_min >= 0 degrees C,precipitation_sum < 3 mm, and wind_speed_10m_max < 30 km/h; otherwise 0",
+    "test_accuracy": 0.8904109589041096,
+    "test_f1": 0.8518518518518519
+}
