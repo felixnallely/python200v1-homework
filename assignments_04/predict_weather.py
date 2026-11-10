@@ -36,8 +36,8 @@ def main():
     for i, (day, prediction) in enumerate(zip(days, predictions), start=1):
         print(
             f"Day {i}: " 
-            f"High={day['temperature_2m_max']}°F, "
-            f"Low={day['temperature_2m_min']}°F, "
+            f"High={day['temperature_2m_max']}°C, "
+            f"Low={day['temperature_2m_min']}°C, "
             f"Rain={day['precipitation_sum']} in, "
             f"Wind={day['wind_speed_10m_max']} mph -> "
             f"Label={prediction.label}, "
