@@ -231,7 +231,7 @@ but the UI is clunky and the export options are limited."
 response = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
-        {"role": "user", "content":"""
+        {"role": "user", "content": f"""
         Analyze the following review.
         
         Return ONLY valid JSON with these keys:
