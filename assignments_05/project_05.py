@@ -93,8 +93,6 @@ bullets = [
 
 rewrite_bullets(bullets)
 
-    # Your code here: call get_completion(), parse the JSON, and return the result
-
 #a comment: What makes these bullets weak, and what kinds of changes did the model suggest?
 #   These bullets are weak because they are vague and don't give clear results. The model made the bullets 
 #   stronger by using strong action verbs and professional language. 

@@ -306,10 +306,6 @@ print(response.output_text)
 
 
 # --- Ollama Question 1 --- # 
-from openai import OpenAI 
-
-client = OpenAI()
-
 response = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
