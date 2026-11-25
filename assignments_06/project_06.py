@@ -85,9 +85,9 @@ print("\nRETRIVED SOURCE NODES:")
 for i, node in enumerate(response.source_nodes, start=1):
     print(f"\nNode {i}")
     print("Documents:", node.node.metadata.get("file_name", "Unknown"))
-    print("Similarity Score:", round(top_node.score, 4))
+    print("Similarity Score:", round(node.score, 4))
     
-    chunk = top_node.node.text[:200].replace("\n", " ")
+    chunk = node.node.text[:200].replace("\n", " ")
     print("Chunk Preview:", chunk)
 
 # What you asked and why you expected it to be hard

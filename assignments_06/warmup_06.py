@@ -140,11 +140,11 @@ query = "How do I sign up for rewards?"
 
 results = simple_keyword_retrieval(query, documents, verbose=True)
 
-print("Selected document:", results[0][0])
-
-
 #Was your prediction correct? If the result surprised you, add a comment explaining what happened.
 #   Prediction: none found.
+
+print("Selected document:", results[0][0])
+
 
 
 # --- Semantic Question 1 --- # 
@@ -228,7 +228,39 @@ for question in questions:
 #   Query 1: This part "EcoVolt Energy (2022 Partnership) BrightLeaf's collaboration" was irrelevant to employee benefits. 
 #   Query 2: There was a chunk about employee benefits. 
 
+
 # --- LlamaIndex Question 2 --- # 
+query = "What employee benefits does BrightLeaf offer?"
+
+#similarity_top_k =1 
+query_engine_1 = index.as_query_engine(similarity_top_k=1) 
+response_1 = query_engine_1.query(query)
+
+print("\n" + "=" * 80)
+print("SIMILARITY_TOP_K = 1")
+print("Question:", query) 
+print("Response:", response_1)
+
+print("\nSOURCE NODES:")
+for i, node in enumerate(response_1.source_nodes, start=1):
+        print(f"\nNode {i}")
+        print(f"Similarity Score: {node.score:.4f}")
+
+#similarity_top_k = 5
+query_engine_5 = index.as_query_engine(similarity_top_k=5) 
+response_5 = query_engine_5.query(query)
+
+print("\n" + "=" * 80)
+print("SIMILARITY_TOP_K = 5")
+print("Question:", query) 
+print("Response:", response_5)
+
+print("\nSOURCE NODES:")
+for i, node in enumerate(response_5.source_nodes, start=1):
+        print(f"\nNode {i}")
+        print(f"Similarity Score: {node.score:.4f}")
+
+
 #With similarty_top_k=1:
 # BrightLeaf offers a comprehensive benefits program that includes:
 #1. **Health, Vision, and Wellness**: Medical insurance through Blue Cross, covering preventive care, hospitalization, telemedicine, and mental health services. Vision benefits include annual exams and 
